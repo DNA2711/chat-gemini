@@ -14,11 +14,14 @@ const AvtDropdown = () => {
   return (
     <Menu>
       <MenuButton className="">
-        <Avatar
-          alt="Remy Sharp"
-          src="/rog.jpg"
-          sx={{ width: 42, height: 42 }}
-        />
+        <div className="">
+          <Avatar
+            alt="Remy Sharp"
+            src="/rog.jpg"
+            sx={{ width: 42, height: 42 }}
+          />
+        </div>
+
       </MenuButton>
       <Transition
         enter="transition ease-out duration-75"

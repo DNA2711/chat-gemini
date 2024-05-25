@@ -15,7 +15,6 @@ const HelpBt: React.FC<HelpBtProps> = ({ collapsed }) => {
           Help
         </span>
       )}
-
     </button>
   );
 };

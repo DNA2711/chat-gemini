@@ -20,16 +20,18 @@ import MenuBar from "./Nav/MenuBar";
 
 const Header = () => {
   return (
-    <header className="sticky-top px-4 py-3 flex justify-between items-center w-full bg-white dark:bg-slate-900 transition-all duration-300 relative z-30">
-      <div>
-        <h1 className="text-xl dark:text-black space-x-2">
+    <header className="sticky top-0 py-4 px-4 flex justify-between items-center w-full bg-white dark:bg-slate-900 transition-all duration-300 z-30">
+
+      <div className="flex items-center space-x-6">
+        <MenuBar />
+        <h1 className="text-xl dark:text-black z-[99]">
           <span className="font-bold bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent">
             AI Content
           </span>
         </h1>
       </div>
 
-      <div className="flex space-x-2">
+      <div className="flex">
         <div className="md:hidden">
           <button className="hover:bg-gray-700 dark:hover:bg-gray-200 p-3 flex rounded-full space-x-4 relative overflow-hidden ">
             <PlusIcon className="h-6 w-6 dark:text-[#4d5154]" />
@@ -96,9 +98,7 @@ const Header = () => {
           </Menu>
         </div>
 
-        <div className="">
-          <AvtDropdown />
-        </div>
+        <AvtDropdown />
       </div>
     </header>
   );
