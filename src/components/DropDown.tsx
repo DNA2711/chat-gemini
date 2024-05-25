@@ -16,8 +16,8 @@ import {
 const DropDown = () => {
   return (
     <Menu>
-      <MenuButton className="">
-        <EllipsisVerticalIcon className="h-6 w-6 text-gray-300 hover:bg-gray-500 dark:text-[#4d5154] dark:hover:bg-gray-300  rounded-full" />
+      <MenuButton className="h-5 w-5 hover:bg-neutral-200 dark:hover:bg-neutral-700 rounded-full">
+        <EllipsisVerticalIcon className=" text-neutral-900 dark:text-white" />
       </MenuButton>
       <Transition
         enter="transition ease-out duration-75"
@@ -29,43 +29,25 @@ const DropDown = () => {
       >
         <MenuItems
           anchor="right start"
-          className="w-52 origin-top-right rounded-xl border border-white/5 bg-[#424242] dark:bg-white  p-1 text-sm/6 text-white [--anchor-gap:var(--spacing-1)] focus:outline-none dark:text-[#4d5154] shadow-2xl"
+          className="ms-8 w-36 origin-top-right rounded-xl border border-white/5 bg-slate-100 dark:bg-neutral-800 p-1 text-sm/6 text-white [--anchor-gap:var(--spacing-1)] focus:outline-none dark:text-[#4d5154] shadow-2xl"
         >
           <MenuItem>
             <button className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
-              <PencilIcon className="size-4" />
-              <span className="dark:text-[#4d5154]">Edit</span>
-              <kbd className="ml-auto hidden font-sans text-xs text-white/50 group-data-[focus]:inline">
-                ⌘E
-              </kbd>
+              <PencilIcon className="text-neutral-900 dark:text-white size-4" />
+              <span className="text-neutral-900 dark:text-white text-sm">Edit</span>
             </button>
           </MenuItem>
           <MenuItem>
             <button className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
-              <Square2StackIcon className="size-4" />
-              Duplicate
-              <kbd className="ml-auto hidden font-sans text-xs text-white/50 group-data-[focus]:inline">
-                ⌘D
-              </kbd>
+              <ArchiveBoxXMarkIcon className="text-neutral-900 dark:text-white size-4" />
+              <span className="text-neutral-900 dark:text-white text-sm">Archive</span>
             </button>
           </MenuItem>
-          <div className="my-1 h-px bg-white/5" />
+          <div className="my-1 h-px bg-neutral-900/5 dark:bg-white/50" />
           <MenuItem>
             <button className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
-              <ArchiveBoxXMarkIcon className="size-4" />
-              Archive
-              <kbd className="ml-auto hidden font-sans text-xs text-white/50 group-data-[focus]:inline">
-                ⌘A
-              </kbd>
-            </button>
-          </MenuItem>
-          <MenuItem>
-            <button className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
-              <TrashIcon className="size-4" />
-              Delete
-              <kbd className="ml-auto hidden font-sans text-xs text-white/50 group-data-[focus]:inline">
-                ⌘D
-              </kbd>
+              <TrashIcon className="text-neutral-900 dark:text-white size-4" />
+              <span className="text-neutral-900 dark:text-white text-sm">Delete</span>
             </button>
           </MenuItem>
         </MenuItems>

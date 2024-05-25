@@ -18,16 +18,31 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.scroobar-styles::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.scroobar-styles::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.1);
+
+}
+
+.scroobar-styles::-webkit-scrollbar-thumb {
+  background: #E0F2F7;
+  border-radius: 10px;
+}
+
+.scroobar-styles::-webkit-scrollbar-thumb:hover {
+  background: #dad7d7;
 }

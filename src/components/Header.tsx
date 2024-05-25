@@ -16,14 +16,15 @@ import {
   Square2StackIcon,
   TrashIcon,
 } from "@heroicons/react/16/solid";
+import MenuBar from "./Nav/MenuBar";
+
 const Header = () => {
   return (
-    <header className="p-3 flex justify-between items-center w-full bg-[#1e1f20] dark:bg-[#f0f4f9] transition-all duration-300">
+    <header className="sticky-top px-4 py-3 flex justify-between items-center w-full bg-white dark:bg-slate-900 transition-all duration-300 relative z-30">
       <div>
-        <h1 className="text-xl dark:text-black ">
-          Gemini{" "}
-          <span className="bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent">
-            Advanced
+        <h1 className="text-xl dark:text-black space-x-2">
+          <span className="font-bold bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent">
+            AI Content
           </span>
         </h1>
       </div>

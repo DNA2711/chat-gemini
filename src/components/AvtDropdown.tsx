@@ -17,7 +17,7 @@ const AvtDropdown = () => {
         <Avatar
           alt="Remy Sharp"
           src="/rog.jpg"
-          sx={{ width: 48, height: 48 }}
+          sx={{ width: 42, height: 42 }}
         />
       </MenuButton>
       <Transition
@@ -30,51 +30,39 @@ const AvtDropdown = () => {
       >
         <MenuItems
           anchor="bottom end"
-          className="w-[410px] origin-top-right border border-white/5 bg-[#222222] p-1 text-sm/6 text-white [--anchor-gap:var(--spacing-1)] focus:outline-none dark:text-[#4d5154] shadow-2xl space-y-3 rounded-3xl dark:bg-[#e9eef6]"
+          className="w-[410px] z-[99] space-y-4 origin-top-right rounded-xl border border-white/5 bg-slate-100 dark:bg-slate-800 p-3 text-sm/6 text-white [--anchor-gap:var(--spacing-1)] focus:outline-none dark:text-[#4d5154] shadow-2xl opacity-100 scale-100"
         >
           <MenuItem>
-            <div className="flex justify-center">
-              <span>ducnguyen6693@gmail.com</span>
+            <div className="space-y-1">
+              <div className="flex justify-center">
+                <span className="text-neutral-800 dark:text-white">ducnguyen6693@gmail.com</span>
+              </div>
+              <div className="flex justify-center">
+                <Avatar
+                  alt="Remy Sharp"
+                  src="/rog.jpg"
+                  sx={{ width: 64, height: 64 }}
+                />
+              </div>
+              <div className="flex justify-center">
+                <span className="text-neutral-800 dark:text-white">Hello DNA,</span>
+              </div>
             </div>
           </MenuItem>
 
           <MenuItem>
-            <div className="flex justify-center">
-              <Avatar
-                alt="Remy Sharp"
-                src="/rog.jpg"
-                sx={{ width: 64, height: 64 }}
-              />
-            </div>
-          </MenuItem>
-
-          <MenuItem>
-            <div className="flex justify-center">
-              <span>Hello DNA,</span>
-            </div>
-          </MenuItem>
-
-          {/* <MenuItem>
-            <div className="flex justify-center">
-              <button className="border rounded-full border-gray-400 p-3">
-                <span className="text-blue-200">Manage your account</span>
-              </button>
-            </div>
-          </MenuItem> */}
-
-          <MenuItem>
-            <div className="flex justify-center space-x-1">
-              <button className="w-1/2 bg-black rounded-bl-full flex rounded-tl-full space-x-1 items-center justify-center p-3 dark:bg-white">
-                <div className="bg-gray-800 text-blue-200 dark:bg-[#e9eef6] rounded-full">
-                  <AddIcon className="h-6 w-6 dark:text-[#4d5154]" />
+            <div className="grid grid-cols-2 gap-2">
+              <button className="bg-slate-200 dark:bg-slate-900 rounded-bl-full flex rounded-tl-full space-x-1 items-center justify-center py-2">
+                <div className="text-neutral-800 dark:text-white">
+                  <AddIcon className="h-6 w-6 " />
                 </div>
-                <span> Manage your account</span>
+                <span className="text-neutral-800 dark:text-white text-sm">Manage account</span>
               </button>
-              <button className="w-1/2 bg-black rounded-br-full flex rounded-tr-full space-x-1 items-center justify-center p-3 dark:bg-white">
-                <div>
-                  <LogoutIcon className="h-6 w-6 dark:text-[#4d5154]" />
+              <button className="bg-slate-200 dark:bg-slate-900 rounded-br-full flex rounded-tr-full space-x-1 items-center justify-center py-2">
+                <div className="text-neutral-800 dark:text-white">
+                  <LogoutIcon className="h-6 w-6" />
                 </div>
-                <span>Logout</span>
+                <span className="text-neutral-800 dark:text-white text-sm">Logout</span>
               </button>
             </div>
           </MenuItem>
@@ -82,13 +70,13 @@ const AvtDropdown = () => {
           <MenuItem>
             <div className="flex justify-between space-x-1">
               <button className="w-1/2 flex-grow text-end text-[#c5ccd1] dark:text-[#4d5154]">
-                Privacy Policy
+                <span className="text-neutral-800 dark:text-white">Privacy Policy</span>
               </button>
               <div className="flex justify-center items-center">
                 <CircleIcon className="h-1 w-1 text-[#c5ccd1] dark:text-[#4d5154]" />
               </div>
               <button className="w-1/2 text-start text-[#c5ccd1] dark:text-[#4d5154]">
-                Terms of Service
+                <span className="text-neutral-800 dark:text-white">Terms of Service</span>
               </button>
             </div>
           </MenuItem>

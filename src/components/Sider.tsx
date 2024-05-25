@@ -6,13 +6,15 @@ import Message from "./Message";
 import HelpBt from "./HelpBt";
 import ActivityBt from "./ActivityBt";
 import SettingBt from "./SettingBt";
+import { useThemeMode } from "@/hooks/useThemeMode";
 
 const Sider: React.FC = () => {
+  useThemeMode();
   const [collapsed, setCollapsed] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth <= 1024) {
         setCollapsed(true);
       } else {
         setCollapsed(false);
@@ -28,20 +30,27 @@ const Sider: React.FC = () => {
 
   return (
     <div
-      className={` bg-[#1e1f20] flex flex-col justify-between dark:bg-[#f0f4f9] overflow-hidden transition-all duration-300 ${
-        collapsed ? "w-20" : "w-[286px]"
-      }`}
+      className={`${collapsed ? "w-20" : "w-80"} p-4 space-y-12 bg-neutral-100 flex flex-col justify-between dark:bg-neutral-900 overflow-hidden transition-all duration-300`}
     >
-      <div className="flex flex-col  px-4 py-4 space-y-5 transition-all duration-300">
-        <button className="left-0" onClick={() => setCollapsed(!collapsed)}>
-          <Bars3Icon className="h-10 w-10 text-white dark:text-[#4d5154] hover:bg-gray-700 p-2 rounded-full dark:hover:bg-gray-200" />
+      <div>
+        <button className={`p-2 text-neutral-900 dark:text-white hover:bg-neutral-200 hover:dark:bg-neutral-700 rounded-full`} onClick={() => setCollapsed(!collapsed)}>
+          <Bars3Icon className="h-6 w-6" />
         </button>
-        <NewContent collapsed={collapsed} />
       </div>
 
+      <NewContent collapsed={collapsed} />
+
       <div className="flex flex-col justify-between h-screen">
-        <Message collapsed={collapsed} />
-        <div className="flex flex-col px-4 py-4 space-y-2">
+        <div className={`${collapsed ? "opacity-0 pointer-events-none" : "opacity-100"} space-y-5 transition-all duration-300`}>
+          <span className="block text-neutral-900 dark:text-white font-medium ms-2">Recently</span>
+          <div className="grid grid-cols-1 gap-1">
+            <Message collapsed={collapsed} />
+            <Message collapsed={collapsed} />
+            <Message collapsed={collapsed} />
+          </div>
+        </div>
+
+        <div className="space-y-3">
           <HelpBt collapsed={collapsed} />
           <ActivityBt collapsed={collapsed} />
           <SettingBt collapsed={collapsed} />

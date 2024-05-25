@@ -21,15 +21,16 @@ interface SettingBtProps {
 const SettingBt: React.FC<SettingBtProps> = ({ collapsed }) => {
   return (
     <Menu>
-      <MenuButton className="hover:bg-gray-700 dark:hover:bg-gray-200 p-3 flex rounded-full space-x-4 relative overflow-hidden ">
-        <SettingsIcon className="h-6 w-6 text-[#e1e2e3] dark:text-[#4d5154]" />
-        <span
-          className={`text-[#e1e2e3] dark:text-[#4d5154] origin-left absolute ${
-            collapsed ? "scale-0" : "scale-100"
-          } transition-transform duration-300 whitespace-nowrap left-10`}
-        >
-          Setting
-        </span>
+      <MenuButton className="p-2 flex items-center space-x-4 rounded-full relative overflow-hidden hover:bg-slate-100 dark:hover:bg-neutral-800 w-full">
+        <SettingsIcon className="h-5 w-5 text-neutral-800 dark:text-white" />
+        {!collapsed && (
+          <span
+            className={`block text-sm text-neutral-800 dark:text-white origin-left ${collapsed ? "scale-0" : "scale-100"
+              } transition-transform duration-300 whitespace-nowrap`}
+          >
+            Setting
+          </span>
+        )}
       </MenuButton>
 
       <Transition
@@ -41,46 +42,29 @@ const SettingBt: React.FC<SettingBtProps> = ({ collapsed }) => {
         leaveTo="opacity-0 scale-95"
       >
         <MenuItems
-          anchor="right end"
-          className="w-52 origin-top-right rounded-xl border border-white/5 bg-[#424242] p-1 text-sm/6 text-white [--anchor-gap:var(--spacing-1)] focus:outline-none dark:bg-[#e9eef6] dark:text-[#4d5154]"
+          anchor="top end"
+          className="w-52 origin-top-right rounded-xl border border-white/5 bg-slate-100 dark:bg-neutral-800 p-1 text-sm/6 text-white [--anchor-gap:var(--spacing-1)] focus:outline-none dark:text-[#4d5154] shadow-2xl"
         >
           <MenuItem>
-            <button className="group flex justify-between w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
+            <div className="group flex justify-between w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10 cursor-pointer">
               <div className="flex items-center space-x-2">
-                <MoonIcon className="size-4" />
-                <span>Dark mode</span>
+                <MoonIcon className="text-neutral-800 dark:text-white size-4" />
+                <span className="text-neutral-900 dark:text-white">Dark mode</span>
               </div>
               <ToggleMode />
-            </button>
-          </MenuItem>
-
-          <MenuItem>
-            <button className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
-              <Square2StackIcon className="size-4" />
-              Duplicate
-              <kbd className="ml-auto hidden font-sans text-xs text-white/50 group-data-[focus]:inline">
-                ⌘D
-              </kbd>
-            </button>
-          </MenuItem>
-
-          <div className="my-1 h-px bg-white/5" />
-          <MenuItem>
-            <button className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
-              <ArchiveBoxXMarkIcon className="size-4" />
-              Archive
-              <kbd className="ml-auto hidden font-sans text-xs text-white/50 group-data-[focus]:inline">
-                ⌘A
-              </kbd>
-            </button>
+            </div>
           </MenuItem>
           <MenuItem>
             <button className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
-              <TrashIcon className="size-4" />
-              Delete
-              <kbd className="ml-auto hidden font-sans text-xs text-white/50 group-data-[focus]:inline">
-                ⌘D
-              </kbd>
+              <ArchiveBoxXMarkIcon className="text-neutral-800 dark:text-white size-4" />
+              <span className="text-neutral-900 dark:text-white">Archive</span>
+            </button>
+          </MenuItem>
+          <div className="my-1 h-px bg-neutral-900/5 dark:bg-white/50" />
+          <MenuItem>
+            <button className="group flex w-full items-center justify gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
+              <TrashIcon className="text-neutral-800 dark:text-white size-4" />
+              <span className="text-neutral-900 dark:text-white">Delete</span>
             </button>
           </MenuItem>
         </MenuItems>
