@@ -18,7 +18,7 @@ const AvtDropdown = () => {
           <Avatar
             alt="Remy Sharp"
             src="/rog.jpg"
-            sx={{ width: 42, height: 42 }}
+            sx={{ width: 48, height: 48 }}
           />
         </div>
 

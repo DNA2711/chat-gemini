@@ -16,7 +16,7 @@ import {
 const DropDown = () => {
   return (
     <Menu>
-      <MenuButton className="h-5 w-5 hover:bg-neutral-200 dark:hover:bg-neutral-700 rounded-full">
+      <MenuButton className="size-6 hover:bg-neutral-100 dark:hover:bg-neutral-700 rounded-full lg:block hidden">
         <EllipsisVerticalIcon className=" text-neutral-900 dark:text-white" />
       </MenuButton>
       <Transition

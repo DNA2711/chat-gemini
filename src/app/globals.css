@@ -34,15 +34,15 @@
 }
 
 .scroobar-styles::-webkit-scrollbar-track {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.0);
 
 }
 
 .scroobar-styles::-webkit-scrollbar-thumb {
-  background: #E0F2F7;
+  background-color: rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
 
 .scroobar-styles::-webkit-scrollbar-thumb:hover {
-  background: #dad7d7;
+  background-color: rgba(0, 0, 0, 0.2);
 }

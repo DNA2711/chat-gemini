@@ -5,7 +5,7 @@ interface HelpBtProps {
 }
 const HelpBt: React.FC<HelpBtProps> = ({ collapsed }) => {
   return (
-    <button className="p-2 flex items-center space-x-4 rounded-full relative overflow-hidden hover:bg-slate-100 dark:hover:bg-neutral-800">
+    <button className="p-2 flex items-center space-x-4 rounded-full relative overflow-hidden hover:bg-slate-200 dark:hover:bg-neutral-800 w-full">
       <HelpOutlineIcon className="h-5 w-5 text-neutral-800 dark:text-white" />
       {!collapsed && (
         <span
