@@ -46,3 +46,9 @@
 .scroobar-styles::-webkit-scrollbar-thumb:hover {
   background-color: rgba(0, 0, 0, 0.2);
 }
+
+@media (max-width: 768px) {
+  .scroobar-styles::-webkit-scrollbar {
+    width: 0;
+  }
+}

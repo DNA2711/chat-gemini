@@ -49,12 +49,9 @@ const Sider: React.FC = () => {
           </div>
         </div>
 
-
-
-
         <div className={`${collapsed ? "opacity-0 pointer-events-none" : "opacity-100"} transition-all duration-300 overflow-y-auto h-4/6 px-3 py-2 scroobar-styles`}>
-          <RecentlyMessages collapsed={collapsed} />
-          <ShowMoreMessages collapsed={collapsed} />
+          <RecentlyMessages />
+          <ShowMoreMessages />
         </div>
 
         <div className="h-1/6 px-4 flex flex-col justify-center">
