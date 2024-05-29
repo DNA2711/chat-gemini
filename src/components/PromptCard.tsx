@@ -1,19 +1,21 @@
 import React from "react";
 import AddIcon from "@mui/icons-material/Add";
 interface PromptCardProps {
-  icon: React.ReactNode;
   title: string;
   onClick: (title: string) => void;
 }
 
-const PromptCard: React.FC<PromptCardProps> = ({ icon, title, onClick }) => {
+const PromptCard: React.FC<PromptCardProps> = ({ title, onClick }) => {
   return (
     <button
-      className="bg-white rounded-lg flex shadow-md p-5 h-32 overflow-hidden space-x-5"
+      className="bg-white rounded-lg flex shadow-md p-3 h-24 overflow-hidden space-x-5 hover:border-[#805ad5] border-2 hover:bg-[#eae7ff] transition duration-300 ease-in-out"
       onClick={() => onClick(title)}
     >
-      <div className="flex text-black">{icon}</div>
-      <span className="text-lg font-medium text-black">{title}</span>
+      <div className="flex-grow break-words overflow-hidden ">
+        <span className="text-md font-medium text-black line-clamp-3 text-left">
+          {title}
+        </span>
+      </div>
       <div className="">
         <AddIcon className="size-6 text-black" />
       </div>

@@ -2,15 +2,14 @@ import { Select } from "@headlessui/react";
 
 const Selection = () => {
   return (
-    <div className="space-x-2">
+    <div className="grid gap-4 lg:grid-cols-5 grid-cols-2">
       <Select
         name="status"
         aria-label="Project status"
-        className="text-black rounded-lg"
+        className="text-black p-1 px-3 rounded-lg "
       >
         <option>Posts</option>
         <option>Articles</option>
-        <option>Product descriptions</option>
         <option>Review</option>
         <option>How-to guide</option>
         <option>Opinion piece</option>
@@ -20,7 +19,7 @@ const Selection = () => {
       <Select
         name="status"
         aria-label="Project status"
-        className="text-black rounded-lg"
+        className="text-black p-1 px-3 rounded-lg "
       >
         <option>Neutral</option>
         <option>Formal</option>
@@ -30,10 +29,10 @@ const Selection = () => {
         <option>Educational</option>
       </Select>
 
-      <Select
+      {/* <Select
         name="status"
         aria-label="Project status"
-        className="text-black rounded-lg"
+        className="text-black p-1 px-3 rounded-lg"
       >
         <option value="active">Short</option>
         <option value="paused">Medium</option>
@@ -44,13 +43,25 @@ const Selection = () => {
       <Select
         name="status"
         aria-label="Project status"
-        className="text-black rounded-lg"
+        className="text-black p-1 px-3 rounded-lg"
       >
         <option value="active">English</option>
-        <option value="paused"></option>
+        <option value="paused">Vietnamese</option>
         <option value="delayed">Delayed</option>
         <option value="canceled">Canceled</option>
       </Select>
+      <Select
+        name="status"
+        aria-label="Project status"
+        className="text-black p-1 px-3 rounded-lg "
+      >
+        <option>Marketer</option>
+        <option>Articles</option>
+        <option>Review</option>
+        <option>How-to guide</option>
+        <option>Opinion piece</option>
+        <option>Blog post</option>
+      </Select> */}
     </div>
   );
 };
