@@ -7,8 +7,6 @@ const TextOutline = () => {
           name="full_name"
           className="rounded-xl w-full h-80 p-5 text-md text-black"
           readOnly
-          // value={textareaValue}
-          // onChange={handleTextAreaChange}
         />
       </div>
     </div>

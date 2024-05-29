@@ -1,10 +1,10 @@
-import Promt from "@/components/Promt";
+import Promt from "@/components/Generate/Promt";
 
 const CreatePage = () => {
-    return (
-        <>
-            <Promt />
-        </>
-    )
-}
+  return (
+    <>
+      <Promt />
+    </>
+  );
+};
 export default CreatePage;

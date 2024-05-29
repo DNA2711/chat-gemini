@@ -4,9 +4,9 @@ import GroupsIcon from "@mui/icons-material/Groups";
 
 const FormatBt = () => {
   return (
-    <section className="flex justify-center gap-3">
+    <section className="flex justify-center space-x-2">
       <button
-        className="bg-white p-3 text-[#805ad5] border-2 w-32 text-md font-semibold hover:border-[#805ad5] hover:bg-[#eae7ff] flex flex-col justify-center items-center rounded-lg space-y-1
+        className="bg-white p-3 text-[#805ad5] border-2 w-32 text-md border- white font-semibold hover:border-[#805ad5] hover:bg-[#eae7ff] flex flex-col justify-center items-center rounded-lg space-y-1
       transition duration-300 ease-in-out"
       >
         <CastIcon className="size-5" />

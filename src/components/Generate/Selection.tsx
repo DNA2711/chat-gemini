@@ -6,7 +6,7 @@ const Selection = () => {
       <Select
         name="status"
         aria-label="Project status"
-        className="text-black p-1 px-3 rounded-lg "
+        className="text-black p-1 px-3 border-none rounded-lg "
       >
         <option>Posts</option>
         <option>Articles</option>
@@ -19,7 +19,7 @@ const Selection = () => {
       <Select
         name="status"
         aria-label="Project status"
-        className="text-black p-1 px-3 rounded-lg "
+        className="text-black border-none p-1 px-3 rounded-lg "
       >
         <option>Neutral</option>
         <option>Formal</option>
