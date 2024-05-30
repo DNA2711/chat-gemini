@@ -15,11 +15,6 @@ const Promt2 = () => {
 
   return (
     <div className="">
-      <section className="lg:p-6 p-4 ">
-        <button className="bg-white p-2 text-black text-xl font-semibold flex justify-center items-center rounded-lg space-x-2">
-          <ArrowBackIosIcon className="size-6" />
-        </button>
-      </section>
       <div className="flex container justify-center items-center">
         <section className="flex justify-center items-center">
           <h1 className="lg:text-3xl text-2xl font-bold text-black dark:text-white">

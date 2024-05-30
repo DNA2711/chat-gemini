@@ -1,33 +1,30 @@
 import { Select } from "@headlessui/react";
+import SelectionList from "../ListBox/SelectionList";
+
+const TypeContent1 = [
+  "Posts",
+  "Articles",
+  "Review",
+  "How-to guide",
+  "Opinion piece",
+  "Blog post",
+]
+
+const TypeContent2 = [
+  "Neutral",
+  "Formal",
+  "Informal",
+  "Technical",
+  "Professional",
+  "Educational",
+]
 
 const Selection = () => {
   return (
-    <div className="grid gap-4 lg:grid-cols-5 grid-cols-2">
-      <Select
-        name="status"
-        aria-label="Project status"
-        className="text-black p-1 px-3 border-none rounded-lg "
-      >
-        <option>Posts</option>
-        <option>Articles</option>
-        <option>Review</option>
-        <option>How-to guide</option>
-        <option>Opinion piece</option>
-        <option>Blog post</option>
-      </Select>
+    <div className="flex flex-wrap gap-2">
+      <SelectionList list={TypeContent1} />
 
-      <Select
-        name="status"
-        aria-label="Project status"
-        className="text-black border-none p-1 px-3 rounded-lg "
-      >
-        <option>Neutral</option>
-        <option>Formal</option>
-        <option>Informal</option>
-        <option>Technical</option>
-        <option>Professional</option>
-        <option>Educational</option>
-      </Select>
+      <SelectionList list={TypeContent2} />
 
       {/* <Select
         name="status"

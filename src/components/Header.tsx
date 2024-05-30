@@ -7,7 +7,7 @@ import EditContentMobile from "./EditContentMobile";
 const Header = () => {
   return (
     <header className="sticky top-0 p-4 flex bg-white dark:bg-slate-900 transition-all duration-300 z-30">
-      <div className="w-1/2 flex items-center md:space-x-0 space-x-6">
+      <div className="w-1/2 flex items-center lg:space-x-0 space-x-6">
         <MenuBar />
         <h1 className="md:text-2xl text-xl z-[51] font-extrabold bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">
           <span>AI Content</span> <span className="sm:inline-block hidden"> Creator</span>
