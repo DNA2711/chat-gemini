@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import TextArea from "./TextArea";
 
 interface Author {
   Professional: string;
@@ -12,6 +13,7 @@ interface Author {
 function AuthorSelector() {
   const [selectedAuthor, setSelectedAuthor] = useState("");
   const [textToShow, setTextToShow] = useState("");
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const authors = {
     Professional:
@@ -25,32 +27,43 @@ function AuthorSelector() {
     Inspirational:
       "Motivational and uplifting tone that aims to inspire and encourage readers.",
     Humorous:
-      "Light-hearted and entertaining tone, use humor and wit to engage the audience. Suitable for satire, comedy writing, and certain types of marketing..",
+      "Light-hearted and entertaining tone, use humor and wit to engage the audience. Suitable for satire, comedy writing, and certain types of marketing.. Light-hearted and entertaining tone, use humor and wit to engage the audience. Suitable for satire, comedy writing, and certain types of marketing..",
   };
 
-  const handleToneClick = (author: keyof Author) => {
+  const handleAuthorClick = (author: keyof Author) => {
     setSelectedAuthor(author);
     setTextToShow(authors[author]);
   };
 
+  const autoResize = () => {
+    if (textareaRef.current) {
+      textareaRef.current.style.height = "auto";
+      textareaRef.current.style.height =
+        textareaRef.current.scrollHeight + "px";
+    }
+  };
+
+  useEffect(() => {
+    autoResize();
+  }, [textToShow]);
+
   return (
     <div>
-      <textarea
+      <TextArea
         value={textToShow}
         readOnly
-        className="w-full h-20 p-2 border rounded"
+        className="pointer-events-none w-full rounded-md border-none p-2 transition duration-300 ease-in-out dark:bg-[#32353a] dark:text-white"
       />
 
-      <div className=" grid grid-cols-3 grid-rows-2 gap-2 ">
+      <div className="flex flex-wrap gap-2 overflow-hidden rounded-md">
+        {" "}
         {Object.keys(authors).map((author) => (
           <button
             key={author}
-            onClick={() => handleToneClick(author as keyof Author)}
-            className={`px-4 py-1 rounded transition duration-300 ease-in-out transform hover:scale-105 ${
-              selectedAuthor === author
-                ? "bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white shadow-md"
-                : "bg-gray-100 hover:bg-gray-200"
-            }`}
+            onClick={() => handleAuthorClick(author as keyof Author)}
+            className={`text-md flex w-fit items-center justify-center rounded-md px-4 py-2 font-semibold transition duration-300 ease-in-out focus:outline-none
+        ${selectedAuthor === author ? "bg-[#805ad5] text-white" : "bg-white text-[#805ad5] hover:bg-[#eae7ff] dark:bg-[#32353a] dark:text-[#a6a7af]"}
+      `}
           >
             {author}
           </button>

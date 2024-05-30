@@ -1,11 +1,13 @@
 const TextOutline = () => {
   return (
     <div className="container">
-      <div className="lg:px-40 space-y-2">
+      <div className="space-y-2 lg:px-72">
         <span className="text-black dark:text-white">Outline</span>
         <textarea
           name="full_name"
-          className="rounded-xl w-full h-80 p-5 text-md text-black"
+          className="text-md pointer-events-none h-80 w-full rounded-md border-none p-5 transition
+          duration-300 ease-in-out dark:bg-[#32353a]
+          dark:text-[#a6a7af]"
           readOnly
         />
       </div>

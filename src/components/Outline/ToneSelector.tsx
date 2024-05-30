@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import TextArea from "./TextArea";
 
 interface Tone {
   Professional: string;
@@ -11,7 +12,8 @@ interface Tone {
 
 function ToneSelector() {
   const [selectedTone, setSelectedTone] = useState("");
-  const [textToShow, setTextToShow] = useState(""); // Thêm state để lưu đoạn văn bản
+  const [textToShow, setTextToShow] = useState("");
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const tones = {
     Professional:
@@ -25,32 +27,42 @@ function ToneSelector() {
     Inspirational:
       "Motivational and uplifting tone that aims to inspire and encourage readers.",
     Humorous:
-      "Light-hearted and entertaining tone, use humor and wit to engage the audience. Suitable for satire, comedy writing, and certain types of marketing..",
-  }; // Đổi mảng thành object để lưu đoạn văn bản
+      "Light-hearted and entertaining tone, use humor and wit to engage the audience. Suitable for satire, comedy writing, and certain types of marketing..Light-hearted and entertaining tone, use humor and wit to engage the audience. Suitable for satire, comedy writing, and certain types of marketing..",
+  };
+  const autoResize = () => {
+    if (textareaRef.current) {
+      textareaRef.current.style.height = "auto";
+      textareaRef.current.style.height =
+        textareaRef.current.scrollHeight + "px";
+    }
+  };
+
+  useEffect(() => {
+    autoResize();
+  }, [textToShow]);
 
   const handleToneClick = (tone: keyof Tone) => {
     setSelectedTone(tone);
-    setTextToShow(tones[tone]); // Cập nhật đoạn văn bản khi click
+    setTextToShow(tones[tone]);
   };
 
   return (
     <div>
-      <textarea
+      <TextArea
         value={textToShow}
         readOnly
-        className="w-full h-20 p-2 border rounded  "
+        className="pointer-events-none w-full rounded-md border-none p-2 transition duration-300 ease-in-out dark:bg-[#32353a] dark:text-white"
       />
 
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2 overflow-hidden rounded-md">
+        {" "}
         {Object.keys(tones).map((tone) => (
           <button
             key={tone}
             onClick={() => handleToneClick(tone as keyof Tone)}
-            className={`px-4 py-1 rounded transition duration-300 ease-in-out transform hover:scale-105 ${
-              selectedTone === tone
-                ? "bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white shadow-md"
-                : "bg-gray-100 hover:bg-gray-200"
-            }`}
+            className={`text-md flex w-fit items-center justify-center rounded-md px-4 py-2 font-semibold transition duration-300 ease-in-out focus:outline-none
+              ${selectedTone === tone ? "bg-[#805ad5] text-white" : "bg-white text-[#805ad5] hover:bg-[#eae7ff] dark:bg-[#32353a] dark:text-[#a6a7af]"}
+            `}
           >
             {tone}
           </button>
