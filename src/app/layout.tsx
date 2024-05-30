@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Sider from "@/components/Sider";
 import MenuBar from "@/components/Nav/MenuBar";
+import Tooltip from "@/components/Tooltip/Tooltip";
 
 const inter = Inter({ subsets: ["latin"] });
 

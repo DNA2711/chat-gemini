@@ -1,14 +1,24 @@
-import CastIcon from "@mui/icons-material/Cast";
-import TvIcon from "@mui/icons-material/Tv";
-import GroupsIcon from "@mui/icons-material/Groups";
 import ButtonTypeContent from "../Button/ButtonTypeContent";
+import { TooltipText } from "@/const/tooltip";
+import Tooltip from "../Tooltip/Tooltip";
 
-const FormatBt = () => {
+interface Props {
+  platform: string;
+  setPlatform: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const FormatBt: React.FC<Props> = ({ platform, setPlatform }) => {
   return (
     <section className="flex justify-center space-x-2">
-      <ButtonTypeContent typeContent="Presentation" />
-      <ButtonTypeContent typeContent="Website" />
-      <ButtonTypeContent typeContent="Social" />
+      <Tooltip content={TooltipText.platform_document}>
+        <ButtonTypeContent typeContent="Document" platform={platform} setPlatform={setPlatform} />
+      </Tooltip>
+      <Tooltip content={TooltipText.platform_website}>
+        <ButtonTypeContent typeContent="Website" platform={platform} setPlatform={setPlatform} />
+      </Tooltip>
+      <Tooltip content={TooltipText.platform_social}>
+        <ButtonTypeContent typeContent="Social" platform={platform} setPlatform={setPlatform} />
+      </Tooltip>
     </section>
   );
 };

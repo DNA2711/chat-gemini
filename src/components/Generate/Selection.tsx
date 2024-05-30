@@ -1,7 +1,11 @@
 import { Select } from "@headlessui/react";
 import SelectionList from "../ListBox/SelectionList";
+import { getPostType } from "@/const/function";
+import { Action } from "./Promt";
+import { TooltipLanguage, TooltipPostType, TooltipText } from "@/const/tooltip";
+import Tooltip from "../Tooltip/Tooltip";
 
-const TypeContent1 = [
+const PostType = [
   "Posts",
   "Articles",
   "Review",
@@ -10,21 +14,55 @@ const TypeContent1 = [
   "Blog post",
 ]
 
-const TypeContent2 = [
-  "Neutral",
-  "Formal",
-  "Informal",
-  "Technical",
-  "Professional",
-  "Educational",
-]
+const ContentLanguages = [
+  "English",
+  "Chinese",
+  "Spanish",
+  "Arabic",
+  "Portuguese",
+  "Russian",
+  "Japanese",
+  "German",
+  "French",
+  "Korean",
+  "Hindi",
+  "Indonesian",
+  "Italian",
+  "Polish",
+  "Turkish",
+  "Dutch",
+  "Thailand",
+  "Vietnamese",
+];
 
-const Selection = () => {
+interface Props {
+  platform: string;
+  dispatch: (value: Action) => void;
+}
+
+const Selection: React.FC<Props> = ({ platform, dispatch }) => {
   return (
     <div className="flex flex-wrap gap-2">
-      <SelectionList list={TypeContent1} />
+      <Tooltip
+        content={TooltipText.post_type}
+      >
+        <SelectionList
+          list={getPostType(platform)}
+          type="postType"
+          dispatch={dispatch}
+        />
+      </Tooltip>
 
-      <SelectionList list={TypeContent2} />
+      <Tooltip
+        content={TooltipText.language}
+      >
+        <SelectionList
+          list={ContentLanguages}
+          type={'language'}
+          dispatch={dispatch}
+        />
+      </Tooltip>
+
 
       {/* <Select
         name="status"
