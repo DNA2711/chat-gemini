@@ -220,7 +220,7 @@ const Promt = () => {
     };
 
     const result = await trigger(dto)
-    console.log(result)
+
     if (result.statusCode === 200) {
       mutate('/api/recently-config')
       router.push(`/create/${result.data.id}`)
@@ -246,7 +246,7 @@ const Promt = () => {
               <div className="space-y-2">
                 <Textarea
                   name="about"
-                  className={`rounded-md w-full border-none p-5 text-md text-black ${isLinkFocused
+                  className={`rounded-md w-full bg-white dark:bg-[#32353a] border-none p-5 text-md text-black dark:text-neutral-300 ${isLinkFocused
                     ? " opacity-50 bg-gray-200 cursor-not-allowed"
                     : ""
                     }`}
@@ -256,11 +256,18 @@ const Promt = () => {
                   disabled={isLinkFocused}
                   rows={1}
                 />
-                <span className="text-black dark:text-white">Or</span>
+                <Input
+                  name="keywords"
+                  type="text"
+                  className="rounded-md w-full bg-white dark:bg-[#32353a] border-none p-5 text-md text-black dark:text-neutral-300"
+                  placeholder="Keywords"
+                  onChange={handleChange}
+                />
+                <span className="text-neutral-800 inline-block font-semibold dark:text-white">Or</span>
                 <Input
                   name="link"
                   type="text"
-                  className={`rounded-md w-full border-none p-5 text-md text-black ${isTextAreaFocused
+                  className={`rounded-md w-full bg-white dark:bg-[#32353a] border-none p-5 text-md text-black dark:text-neutral-300 ${isTextAreaFocused
                     ? "opacity-50 bg-gray-200 cursor-not-allowed"
                     : ""
                     }`}
@@ -270,14 +277,6 @@ const Promt = () => {
                   onChange={handleLinkChange}
                 />
               </div>
-
-              <Input
-                name="keywords"
-                type="text"
-                className="rounded-md w-full border-none p-5 text-md text-black"
-                placeholder="Keywords"
-                onChange={handleChange}
-              />
             </section>
 
             <section className="flex justify-center mt-3">
@@ -296,7 +295,7 @@ const Promt = () => {
           {!textareaValue && (
             <section className="transition-all duration-500 ease-in-out opacity-100 space-y-3">
               <div className="flex justify-center items-center">
-                <span className="text-2xl font-semibold text-black dark:text-white">
+                <span className="text-2xl font-semibold text-neutral-800 dark:text-white">
                   Example Prompts
                 </span>
               </div>

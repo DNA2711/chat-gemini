@@ -17,54 +17,31 @@ const Promt2 = () => {
 
   return (
     <div className="">
-      <div className="container flex items-center justify-center">
+      <div className="flex items-center justify-center">
         <section className="flex items-center justify-center">
-          <h1 className="text-2xl font-bold text-black dark:text-white lg:text-3xl">
+          <h2 className="text-2xl font-bold text-black dark:text-white lg:text-3xl">
             Generate
-          </h1>
+          </h2>
         </section>
       </div>
-      <div className="container">
-        <div className="space-y-2 lg:px-72">
-          <section className="flex flex-col space-y-1">
-            <h2 className="text-black dark:text-white">Prompt</h2>
+      <div className="">
+        <div className="space-y-2">
+          <section className="space-y-3">
+            <h3 className="text-black font-semibold dark:text-white">Basic Settings</h3>
             <div className="flex space-x-2">
-              <Select
-                name="status"
-                aria-label="Project status"
-                className="rounded-md border-none p-1 px-3 text-sm text-black transition duration-300
-                ease-in-out dark:bg-[#32353a] dark:text-white"
-              >
-                <option>Posts</option>
-                <option>Articles</option>
-                <option>Review</option>
-                <option>How-to guide</option>
-                <option>Opinion piece</option>
-                <option>Blog post</option>
-              </Select>
-
-              <Select
-                name="status"
-                aria-label="Project status"
-                className="rounded-md border-none p-1 px-3 text-sm transition duration-300 ease-in-out dark:bg-[#32353a] dark:text-white"
-              >
-                <option value="active">English</option>
-                <option value="paused">Vietnamese</option>
-              </Select>
+              <div className="rounded-md border-none p-1 px-3 text-sm transition duration-300 ease-in-out bg-white dark:bg-[#32353a]">
+                <span className="text-neutral-500 dark:text-white font-semibold">Website</span>
+              </div>
+              <div className="rounded-md border-none p-1 px-3 text-sm transition duration-300 ease-in-out bg-white dark:bg-[#32353a]">
+                <span className="text-neutral-500 dark:text-white font-semibold">Posts</span>
+              </div>
+              <div className="rounded-md border-none p-1 px-3 text-sm transition duration-300 ease-in-out bg-white dark:bg-[#32353a]">
+                <span className="text-neutral-500 dark:text-white font-semibold">English</span>
+              </div>
             </div>
           </section>
 
           <section className="relative">
-            {" "}
-            {/* <textarea
-              name="prompt"
-              ref={textareaRef}
-              className="text-md w-full resize-none items-center break-words rounded-md border-none pr-10 transition duration-300 ease-in-out dark:bg-[#32353a] dark:text-white"
-              placeholder="Describe what you'd like to make..."
-              value={textareaValue}
-              onInput={autoResize}
-              onChange={handleTextAreaChange}
-            /> */}
             <TextArea
               value={textareaValue}
               onChange={handleTextAreaChange}
@@ -72,9 +49,7 @@ const Promt2 = () => {
               className="text-md w-full items-center break-words rounded-md border-none pr-10 transition duration-300 ease-in-out dark:bg-[#32353a] dark:text-white"
             />
             <div className="absolute inset-y-0 right-0 flex items-center pr-2">
-              {" "}
               <button>
-                {" "}
                 <ArrowPathRoundedSquareIcon className="h-6 w-6 text-gray-500" />
               </button>
             </div>

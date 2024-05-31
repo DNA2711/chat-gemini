@@ -26,7 +26,7 @@ const Tooltip: React.FC<TooltipProps> = ({ content, children, placement = 'top',
             {showTooltip && (
                 <div
                     role="tooltip"
-                    className={`absolute z-10 p-1.5 text-xs ${sizeClass} text-neutral-200 bg-neutral-700 dark:bg-neutral-500 rounded shadow-md
+                    className={`absolute z-10 p-1.5 text-xs ${sizeClass} text-neutral-200 bg-neutral-700 dark:bg-[#32353a] rounded shadow-md
                     ${placement === 'top' ? 'bottom-full left-1/2 transform -translate-x-1/2 -translate-y-2' : ''}
                     ${placement === 'bottom' ? 'top-full left-1/2 transform -translate-x-1/2 translate-y-2' : ''}
                     ${placement === 'left' ? 'right-full top-1/2 transform -translate-x-2 -translate-y-1/2' : ''}
