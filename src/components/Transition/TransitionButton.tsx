@@ -3,7 +3,7 @@ interface Props {
     name?: string;
     className: string;
     isShow?: boolean;
-    typeShow: string;
+    typeShow?: string;
     setShow?: React.Dispatch<React.SetStateAction<boolean>>;
     setTypeShow?: React.Dispatch<React.SetStateAction<string>>;
     setShowOther?: React.Dispatch<React.SetStateAction<boolean>>;
@@ -40,7 +40,6 @@ const TransitionButton: React.FC<Props> = ({
                         {name}
                     </span>
                 )}
-
             </button>
         </>
     )

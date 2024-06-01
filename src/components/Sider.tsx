@@ -2,12 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import NewContent from "./NewContent";
-import Message from "./Message";
-import HelpBt from "./HelpBt";
-import ActivityBt from "./ActivityBt";
-import SettingBt from "./SettingBt";
 import { useThemeMode } from "@/hooks/useThemeMode";
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import RecentlyMessages from "./Messages/RecentlygMessages";
 import ShowMoreMessages from "./Messages/ShowMoreMessages";
 import SiderBottom from "./SiderBottom/SiderBottom";
@@ -34,7 +29,7 @@ const Sider: React.FC = () => {
 
   return (
     <>
-      <div className={`lg:block hidden ${collapsed ? "w-20" : "w-72"} bg-neutral-100 dark:bg-neutral-900 transition-all duration-300 relative`}>
+      <div id="menu" className={`lg:block hidden ${collapsed ? "w-20" : "w-72"} bg-neutral-100 dark:bg-neutral-900 transition-all duration-300 relative`}>
         <div className="h-1/6 flex flex-col justify-between">
           <div className="relative">
             <button className={`absolute top-5 start-5 p-2 text-neutral-900 dark:text-white hover:bg-neutral-200 hover:dark:bg-neutral-700 rounded-full`}

@@ -51,7 +51,7 @@ function ToneSelector() {
       <TextArea
         value={textToShow}
         readOnly
-        className="pointer-events-none w-full rounded-md border-none p-2 transition duration-300 ease-in-out dark:bg-[#32353a] dark:text-white"
+        className="pointer-events-none w-full rounded-md border-none p-2 transition duration-300 ease-in-out dark:bg-zinc-800 dark:text-neutral-300"
       />
 
       <div className="flex flex-wrap gap-2 overflow-hidden rounded-md">
@@ -61,7 +61,7 @@ function ToneSelector() {
             key={tone}
             onClick={() => handleToneClick(tone as keyof Tone)}
             className={`text-md flex w-fit items-center justify-center rounded-md px-4 py-2 font-semibold transition duration-300 ease-in-out focus:outline-none
-              ${selectedTone === tone ? "bg-[#805ad5] text-white" : "bg-white text-[#805ad5] hover:bg-[#eae7ff] dark:bg-[#32353a] dark:text-[#a6a7af]"}
+              ${selectedTone === tone ? "bg-[#805ad5] text-white" : "bg-white text-violet-500 hover:bg-violet-200 dark:bg-zinc-800 dark:text-neutral-400"}
             `}
           >
             {tone}

@@ -1,7 +1,6 @@
 import ActivityBt from "../ActivityBt";
 import HelpBt from "../HelpBt";
 import SettingBt from "../SettingBt";
-import SettingButtonMobile from "../SettingButton/SettingButtonMobile";
 
 interface Props {
     collapsed: boolean

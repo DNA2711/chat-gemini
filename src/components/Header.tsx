@@ -3,10 +3,11 @@ import * as React from "react";
 import AvtDropdown from "./AvtDropdown";
 import MenuBar from "./Nav/MenuBar";
 import EditContentMobile from "./EditContentMobile";
+import Image from "next/image";
 
 const Header = () => {
   return (
-    <header className="sticky top-0 p-4 flex bg-white dark:bg-slate-900 transition-all duration-300 z-30">
+    <header className="sticky top-0 py-2 px-4 flex bg-white dark:bg-slate-900 transition-all duration-300 z-30 shadow-md">
       <div className="w-1/2 flex items-center lg:space-x-0 space-x-6">
         <MenuBar />
         <h1 className="md:text-2xl text-xl z-[51] font-extrabold bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">

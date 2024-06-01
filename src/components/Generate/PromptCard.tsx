@@ -8,7 +8,7 @@ interface PromptCardProps {
 const PromptCard: React.FC<PromptCardProps> = ({ title, onClick }) => {
   return (
     <button
-      className="bg-white dark:bg-[#32353a] rounded-md flex shadow-md p-3 h-24 overflow-hidden space-x-5 group hover:border-indigo-600 border-2 border-white dark:border-[#32353a] hover:bg-indigo-100 transition duration-300 ease-in-out"
+      className="bg-white dark:bg-neutral-900 rounded-md flex shadow-md p-3 h-24 overflow-hidden space-x-5 group hover:border-indigo-600 dark:hover:border-indigo-600 border-2 border-white dark:border-neutral-900 hover:bg-indigo-100 transition duration-300 ease-in-out"
       onClick={() => onClick(title)}
     >
       <div className="flex-grow break-words border-none overflow-hidden ">

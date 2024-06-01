@@ -223,7 +223,7 @@ const Promt = () => {
 
     if (result.statusCode === 200) {
       mutate('/api/recently-config')
-      router.push(`/create/${result.data.id}`)
+      router.push(`/generate/c/${result.data.id}`)
     }
   }
 
@@ -246,7 +246,7 @@ const Promt = () => {
               <div className="space-y-2">
                 <Textarea
                   name="about"
-                  className={`rounded-md w-full bg-white dark:bg-[#32353a] border-none p-5 text-md text-black dark:text-neutral-300 ${isLinkFocused
+                  className={`rounded-md w-full bg-white dark:bg-neutral-900 border-none p-5 text-md text-black dark:text-neutral-300 ${isLinkFocused
                     ? " opacity-50 bg-gray-200 cursor-not-allowed"
                     : ""
                     }`}
@@ -259,7 +259,7 @@ const Promt = () => {
                 <Input
                   name="keywords"
                   type="text"
-                  className="rounded-md w-full bg-white dark:bg-[#32353a] border-none p-5 text-md text-black dark:text-neutral-300"
+                  className="rounded-md w-full bg-white dark:bg-neutral-900 border-none p-5 text-md text-black dark:text-neutral-300"
                   placeholder="Keywords"
                   onChange={handleChange}
                 />
@@ -267,7 +267,7 @@ const Promt = () => {
                 <Input
                   name="link"
                   type="text"
-                  className={`rounded-md w-full bg-white dark:bg-[#32353a] border-none p-5 text-md text-black dark:text-neutral-300 ${isTextAreaFocused
+                  className={`rounded-md w-full bg-white dark:bg-neutral-900 border-none p-5 text-md text-black dark:text-neutral-300 ${isTextAreaFocused
                     ? "opacity-50 bg-gray-200 cursor-not-allowed"
                     : ""
                     }`}

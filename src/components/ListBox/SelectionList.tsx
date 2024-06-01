@@ -29,7 +29,7 @@ const SelectionList: React.FC<Props> = ({
         <div className="">
             <Listbox value={selected} onChange={changeType}>
                 <ListboxButton
-                    className={'flex justify-between items-center w-40 rounded-md px-2 py-1 bg-white dark:bg-[#32353a] text-sm text-neutral-600 dark:text-white'}
+                    className={'flex justify-between items-center w-40 rounded-md px-2 py-1 bg-white dark:bg-neutral-900 text-sm font-semibold text-neutral-600 dark:text-neutral-300'}
                 >
                     {selected}
                     <KeyboardArrowDownIcon
@@ -40,7 +40,7 @@ const SelectionList: React.FC<Props> = ({
                 <Transition leave="transition ease-in duration-100" leaveFrom="opacity-100" leaveTo="opacity-0">
                     <ListboxOptions
                         anchor="bottom"
-                        className="h-52 w-[var(--button-width)] scroobar-styles rounded-md mt-1 border border-white/5 bg-white dark:bg-[#32353a] p-1 [--anchor-gap:var(--spacing-1)] focus:outline-none shadow-md"
+                        className="h-52 w-[var(--button-width)] scroobar-styles rounded-md mt-1 border border-white/5 bg-white dark:bg-neutral-900 p-1 [--anchor-gap:var(--spacing-1)] focus:outline-none shadow-md"
                     >
                         {list.map((item: string, index: number) => (
                             <ListboxOption
@@ -49,7 +49,7 @@ const SelectionList: React.FC<Props> = ({
                                 className="group flex cursor-default items-center gap-2 rounded-lg py-1.5 px-3 select-none"
                             >
                                 <CheckIcon className="invisible size-4 group-data-[selected]:visible dark:text-white" />
-                                <span className="text-sm text-neutral-600 dark:text-white">{item}</span>
+                                <span className="text-sm text-neutral-600 dark:text-neutral-300">{item}</span>
                             </ListboxOption>
                         ))}
                     </ListboxOptions>

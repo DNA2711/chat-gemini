@@ -21,8 +21,8 @@ const NavMobile: React.FC<Props> = ({
         <>
             <div className={`pt-24 h-screen transition transform shadow-lg ring-1 dark:ring-neutral-700 bg-slate-100 dark:bg-neutral-900 relative`}>
                 <div className={`transition-all duration-300 overflow-y-auto h-5/6 px-3 py-4 scroobar-styles`}>
-                    <RecentlyMessages collapsed={collapsed} />
-                    <ShowMoreMessages collapsed={collapsed} />
+                    <RecentlyMessages />
+                    <ShowMoreMessages />
                 </div>
 
                 <div className="h-1/6 px-4 flex flex-col justify-center">

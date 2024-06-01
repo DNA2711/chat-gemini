@@ -16,27 +16,20 @@ const Promt2 = () => {
   };
 
   return (
-    <div className="">
-      <div className="flex items-center justify-center">
-        <section className="flex items-center justify-center">
-          <h2 className="text-2xl font-bold text-black dark:text-white lg:text-3xl">
-            Generate
-          </h2>
-        </section>
-      </div>
+    <div className="space-y-12">
       <div className="">
         <div className="space-y-2">
-          <section className="space-y-3">
-            <h3 className="text-black font-semibold dark:text-white">Basic Settings</h3>
+          <section className="flex justify-between items-center">
+            <h3 className="text-black font-semibold dark:text-white">Prompt</h3>
             <div className="flex space-x-2">
-              <div className="rounded-md border-none p-1 px-3 text-sm transition duration-300 ease-in-out bg-white dark:bg-[#32353a]">
-                <span className="text-neutral-500 dark:text-white font-semibold">Website</span>
+              <div className="rounded-md border-none p-1 px-3 text-sm transition duration-300 ease-in-out bg-white dark:bg-neutral-900">
+                <span className="text-neutral-600 dark:text-neutral-300 font-semibold">Website</span>
               </div>
-              <div className="rounded-md border-none p-1 px-3 text-sm transition duration-300 ease-in-out bg-white dark:bg-[#32353a]">
-                <span className="text-neutral-500 dark:text-white font-semibold">Posts</span>
+              <div className="rounded-md border-none p-1 px-3 text-sm transition duration-300 ease-in-out bg-white dark:bg-neutral-900">
+                <span className="text-neutral-600 dark:text-neutral-300 font-semibold">Posts</span>
               </div>
-              <div className="rounded-md border-none p-1 px-3 text-sm transition duration-300 ease-in-out bg-white dark:bg-[#32353a]">
-                <span className="text-neutral-500 dark:text-white font-semibold">English</span>
+              <div className="rounded-md border-none p-1 px-3 text-sm transition duration-300 ease-in-out bg-white dark:bg-neutral-900">
+                <span className="text-neutral-600 dark:text-neutral-300 font-semibold">English</span>
               </div>
             </div>
           </section>
@@ -46,7 +39,7 @@ const Promt2 = () => {
               value={textareaValue}
               onChange={handleTextAreaChange}
               placeholder="Describe what you'd like to make..."
-              className="text-md w-full items-center break-words rounded-md border-none pr-10 transition duration-300 ease-in-out dark:bg-[#32353a] dark:text-white"
+              className="text-md w-full items-center break-words rounded-md border-none pr-10 transition duration-300 ease-in-out bg-white dark:bg-neutral-900 text-neutral-600 dark:text-neutral-300"
             />
             <div className="absolute inset-y-0 right-0 flex items-center pr-2">
               <button>
