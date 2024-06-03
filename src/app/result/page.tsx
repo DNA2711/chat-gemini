@@ -1,5 +1,11 @@
+import DraftButton from "@/components/Button/DraftButton";
+
 const Result = () => {
-  return <div></div>;
+  return (
+    <div>
+      <DraftButton />
+    </div>
+  );
 };
 
 export default Result;

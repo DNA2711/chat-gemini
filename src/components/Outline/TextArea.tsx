@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 
 interface AutoResizeTextareaProps {
-  value: string;
+  value?: string;
   placeholder?: string;
   className?: string;
   readOnly?: boolean;
